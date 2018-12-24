@@ -1,0 +1,6 @@
+hash: 2a5074b5800d1883464647071316ed94605a9103b927bbc0f18b0e3fdbc87f83
+updated: 2018-12-24T23:28:45.8745316+05:30
+imports:
+- name: github.com/ahmdrz/goinsta
+  version: 8a4b1078ad1b865b881561251c8d5b07e0765994
+testImports: []
