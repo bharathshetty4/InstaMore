@@ -10,4 +10,7 @@ You can find the *glide.yaml* of this project to know more.
 2. Maintain a file to describe and document RESTful APIs in a Project. We are
 Using [Swagger](https://github.com/go-swagger/go-swagger) Tool, Which can also
 create the CLI for us using the *swagger.yaml*.
-You can refer the *swagger.yaml*  of this project to know more.
+You can refer the *swagger.yaml* of this project to know more.
+
+3. There are many libraries available to build a CLI, In this project we are
+using [cli](https://github.com/urfave/cli) library.

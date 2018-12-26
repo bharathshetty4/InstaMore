@@ -1,6 +1,8 @@
-hash: 2a5074b5800d1883464647071316ed94605a9103b927bbc0f18b0e3fdbc87f83
-updated: 2018-12-24T23:28:45.8745316+05:30
+hash: 0af7460b75352e9518d971181e8fcc2e4dd4346e75c5c59b6b2a7cdab996faf3
+updated: 2018-12-26T22:39:04.562434+05:30
 imports:
 - name: github.com/ahmdrz/goinsta
   version: 8a4b1078ad1b865b881561251c8d5b07e0765994
+- name: github.com/urfave/cli
+  version: b67dcf995b6a7b7f14fad5fcb7cc5441b05e814b
 testImports: []

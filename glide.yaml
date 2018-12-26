@@ -2,3 +2,4 @@ package: github.com/bharathshetty4/InstaMore
 import:
   - package: github.com/ahmdrz/goinsta
     version: v2.3
+  - package: github.com/urfave/cli
