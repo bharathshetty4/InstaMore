@@ -9,7 +9,8 @@ import (
 func SetAppProperties(app *cli.App) {
 	app.Name = "InstaMore"
 	app.HelpName = "InstaMore"
-	app.Description = "a CLI application to do more on Instagram"
+	app.Description = "CLI application to do more on Instagram"
+	app.Usage = "CLI application to do more on Instagram"
 	app.CustomAppHelpTemplate = "InstaMore "
 	app.Version = "0.0.1"
 	app.EnableBashCompletion = true

@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/bharathshetty4/InstaMore/cmd"
 	"log"
 	"os"
 
 	"github.com/urfave/cli"
+
+	"github.com/bharathshetty4/InstaMore/cmd"
 )
 
 func main() {
@@ -17,9 +18,8 @@ func main() {
 	//add commands and parameters to the application
 	cmd.AddCommands(app)
 
-
 	err := app.Run(os.Args)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err.Error())
 	}
 }
