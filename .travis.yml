@@ -1,0 +1,14 @@
+language: go
+sudo: false
+dist: trusty
+go: 1.11.x
+
+os:
+- linux
+
+
+before_script:
+- curl https://glide.sh/get | sh
+
+script:
+- go run main.go login --username username_passed --password password_passed
