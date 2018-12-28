@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"fmt"
+	"github.com/bharathshetty4/InstaMore/features"
 
 	"github.com/urfave/cli"
 )
@@ -34,15 +34,6 @@ var (
 )
 
 func loginInstagram(c *cli.Context) error {
-	//get the auth from config and try to login
-
-	//success: return, else get username and password from config
-
-	if c.String(username) == "" || c.String(password) == "" {
-		return fmt.Errorf("Username and Password both has to be passed")
-	}
-
-	fmt.Printf("Using the username %s to login\n\n", c.String(username))
-
+	features.LoginInstagram(c.String(username), c.String(password))
 	return nil
 }

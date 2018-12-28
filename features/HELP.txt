@@ -1,0 +1,2 @@
+This 'features' package will take the requests from CLI/API and hit the instagram API to return the result.
+Using the config file for auth caching will be done in this package as both CLI and API needs it

@@ -1,8 +1,10 @@
-hash: 0af7460b75352e9518d971181e8fcc2e4dd4346e75c5c59b6b2a7cdab996faf3
-updated: 2018-12-26T22:39:04.562434+05:30
+hash: 360fecf3a19324559b443475ad23c2852e72cb3acf777041a84a74cffc4ade73
+updated: 2018-12-28T23:33:03.5757625+05:30
 imports:
 - name: github.com/ahmdrz/goinsta
   version: 8a4b1078ad1b865b881561251c8d5b07e0765994
+- name: github.com/spf13/viper
+  version: 6d33b5a963d922d182c91e8a1c88d81fd150cfd4
 - name: github.com/urfave/cli
   version: b67dcf995b6a7b7f14fad5fcb7cc5441b05e814b
 testImports: []
