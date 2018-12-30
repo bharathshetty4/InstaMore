@@ -29,7 +29,7 @@ var (
 			{
 				Name: "apilist", //list all the api's available
 				Description: "Lists all the API's available	",
-				Action: apiList,
+				Action:    apiList,
 				ArgsUsage: "[GLOBAL ARGUMENTS]",
 			},
 		},

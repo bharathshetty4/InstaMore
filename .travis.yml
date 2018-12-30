@@ -8,7 +8,7 @@ os:
 
 
 before_script:
-- curl https://glide.sh/get | sh
+- echo "before script"
 
 script:
 - go run main.go login --username username_passed --password password_passed
