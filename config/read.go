@@ -7,14 +7,14 @@ import (
 )
 
 //GetAuthToken returns the cached token from the config file
-func GetAuthToken(configFile string) (token string) {
-	confFiles := getConfigFile(configFile)
-	for _, file := range confFiles {
-		viper.AddConfigPath(file)
-	}
+func GetAuthToken() (token string) {
+	confFile := getConfigFileDir()
+	viper.AddConfigPath(confFile)
+	viper.SetConfigType("yaml")
+
 	err := viper.ReadInConfig()
 	if err != nil {
-		log.Printf("error reading the config file,Error: %+v", err)
+		log.Printf("error reading the auth token from config file, Error: %+v", err)
 		return
 	}
 
@@ -23,15 +23,14 @@ func GetAuthToken(configFile string) (token string) {
 }
 
 //GetUsernamePassword return the cached username and password from the config files
-func GetUsernamePassword(configFile string) (username, password string) {
-	confFiles := getConfigFile(configFile)
-	for _, file := range confFiles {
-		viper.AddConfigPath(file)
-	}
+func GetUsernamePassword() (username, password string) {
+	confFile := getConfigFileDir()
+	viper.AddConfigPath(confFile)
+	viper.SetConfigType("yaml")
 
 	err := viper.ReadInConfig()
 	if err != nil {
-		log.Printf("error reading in the config file,Error: %+v", err)
+		log.Printf("error reading the username/password from config file, Error: %+v", err)
 		return
 	}
 

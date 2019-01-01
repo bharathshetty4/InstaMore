@@ -6,23 +6,43 @@ import (
 )
 
 //WriteUsernamePassword rites the cached username and password to the config file
-func WriteUsernamePassword(configFile, username, password string) (err error) {
-	confFiles := getConfigFile(configFile)
+func WriteUsernamePassword(username, password string) (err error) {
+	confFile := getConfigFileDir()
 
-	//create conf files if not exist
-	createConfFilesIfNotExist(confFiles)
-
-	for _, file := range confFiles {
-		viper.AddConfigPath(file)
-	}
-
-	err = viper.ReadInConfig()
+	err = createConfFilesIfNotExist(confFile)
 	if err != nil {
-		log.Printf("error reading in the config file,Error: %+v", err)
+		log.Printf("Error creating the config file, %+v", err)
+		return
+	}
+	viper.Set(usernameKey, username)
+	viper.Set(passwordKey, password)
+	viper.SetConfigType("yaml")
+	viper.AddConfigPath(confFile)
+	err = viper.WriteConfig()
+	if err != nil {
+		log.Printf("error writing the config file to cache username/password, Error: %+v\n", err)
 		return
 	}
 
-	viper.Set(usernameKey, username)
-	viper.Set(passwordKey, password)
+	return
+}
+
+//WriteUsernamePassword rites the cached username and password to the config file
+func WriteAuthToken(authToken string) (err error) {
+	confFile := getConfigFileDir()
+
+	err = createConfFilesIfNotExist(confFile)
+	if err != nil {
+		log.Printf("Error creating the config file, %+v", err)
+		return
+	}
+	viper.Set(authTokenKey, authToken)
+	viper.SetConfigType("yaml")
+	viper.AddConfigPath(confFile)
+	err = viper.WriteConfig()
+	if err != nil {
+		log.Printf("error writing the config file to cache username/password, Error: %+v\n", err)
+		return
+	}
 	return
 }

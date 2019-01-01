@@ -33,7 +33,7 @@ available in this opensource world and try to make use of it.
 ### Pre-Requisites:
 **Login to Instagram**
 
-`InstaMore login --username <your_instagram_username> --password password`
+`InstaMore login --username <your_instagram_username> --password <password>`
 
 ### Features
 1. Like every photos of a given Instagram Profile

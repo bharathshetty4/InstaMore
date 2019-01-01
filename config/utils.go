@@ -12,23 +12,23 @@ const (
 	authTokenKey = "auth"
 )
 
-//all conf files are added here which will be read by the viper
-func getConfigFile(configFile string) []string {
+func getConfigFileDir() string {
 	homeDir := os.Getenv("HOME")
-	confFiles := []string{homeDir + "/.InstaMore/config"}
+	confFile := homeDir + "/.InstaMore"
 
-	if configFile != "" {
-		confFiles = append(confFiles, configFile)
-	}
-	return confFiles
+	return confFile
 }
 
-func createConfFilesIfNotExist(confFiles []string) (err error) {
-	for _, file := range confFiles {
-		f, _ := os.OpenFile(file, os.O_RDWR|os.O_CREATE, 0755)
-		if err := f.Close(); err != nil {
-			log.Fatalf("error creating the config file %s, Error: %+v", file, err)
+func createConfFilesIfNotExist(confFileDir string) error {
+	confFile := confFileDir + "/config.yaml"
+	if _, err := os.Stat(confFile); os.IsNotExist(err) {
+		os.MkdirAll(confFileDir, 0777)
+		f, err := os.OpenFile(confFile, os.O_CREATE, 0666)
+		if err != nil {
+			log.Printf("unable create the config file at %s, %v", confFile, err.Error())
+			return err
 		}
+		defer f.Close()
 	}
-	return
+	return nil
 }
