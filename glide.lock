@@ -1,10 +1,51 @@
-hash: 360fecf3a19324559b443475ad23c2852e72cb3acf777041a84a74cffc4ade73
-updated: 2018-12-28T23:33:03.5757625+05:30
+hash: 7dcea7680bdb9578ac198ae40f8e2ad6c312d4d567ed1801f3a9ac8205ef150f
+updated: 2019-01-02T11:54:02.6663082+05:30
 imports:
 - name: github.com/ahmdrz/goinsta
-  version: 8a4b1078ad1b865b881561251c8d5b07e0765994
+  version: aa250bb4ac58404c96a82f1590ae46eb89c42229
+- name: github.com/fsnotify/fsnotify
+  version: ccc981bf80385c528a65fbfdd49bf2d8da22aa23
+- name: github.com/hashicorp/hcl
+  version: 392dba7d905ed5d04a5794ba89f558b27e2ba1ca
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/printer
+  - hcl/scanner
+  - hcl/strconv
+  - hcl/token
+  - json/parser
+  - json/scanner
+  - json/token
+- name: github.com/magiconair/properties
+  version: 7c38529aac7222391b7a2661365177a97e21b998
+- name: github.com/mitchellh/mapstructure
+  version: d0303fe809921458f417bcf828397a65db30a7e4
+- name: github.com/pelletier/go-toml
+  version: 27c6b39a135b7dc87a14afb068809132fb7a9a8f
+- name: github.com/spf13/afero
+  version: a5d6946387efe7d64d09dcba68cdd523dc1273a3
+  subpackages:
+  - mem
+- name: github.com/spf13/cast
+  version: 8c9545af88b134710ab1cd196795e7f2388358d7
+- name: github.com/spf13/jwalterweatherman
+  version: 94f6ae3ed3bceceafa716478c5fbf8d29ca601a1
+- name: github.com/spf13/pflag
+  version: 9ff6c6923cfffbcd502984b8e0c80539a94968b7
 - name: github.com/spf13/viper
   version: 6d33b5a963d922d182c91e8a1c88d81fd150cfd4
 - name: github.com/urfave/cli
   version: b67dcf995b6a7b7f14fad5fcb7cc5441b05e814b
+- name: golang.org/x/sys
+  version: 8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: 2910a502d2bf9e43193af9d68ca516529614eed3
+  subpackages:
+  - transform
+  - unicode/norm
+- name: gopkg.in/yaml.v2
+  version: 53feefa2559fb8dfa8d81baad31be332c97d6c77
 testImports: []

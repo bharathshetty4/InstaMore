@@ -1,48 +1,37 @@
 package config
 
 import (
-	"github.com/spf13/viper"
 	"log"
+	"os"
+
+	"github.com/ahmdrz/goinsta"
+	"github.com/spf13/viper"
 )
 
-//WriteUsernamePassword rites the cached username and password to the config file
+//WriteUsernamePassword writes the cached username and password to the config file
 func WriteUsernamePassword(username, password string) (err error) {
-	confFile := getConfigFileDir()
+	confFileDir := getConfigFileDir()
 
-	err = createConfFilesIfNotExist(confFile)
+	err = createConfFilesIfNotExist(confFileDir)
 	if err != nil {
 		log.Printf("Error creating the config file, %+v", err)
 		return
 	}
-	viper.Set(usernameKey, username)
 	viper.Set(passwordKey, password)
+	viper.Set(usernameKey, username)
 	viper.SetConfigType("yaml")
-	viper.AddConfigPath(confFile)
+	viper.AddConfigPath(confFileDir)
 	err = viper.WriteConfig()
 	if err != nil {
 		log.Printf("error writing the config file to cache username/password, Error: %+v\n", err)
-		return
 	}
-
 	return
 }
 
-//WriteUsernamePassword rites the cached username and password to the config file
-func WriteAuthToken(authToken string) (err error) {
-	confFile := getConfigFileDir()
+//WriteInstagramObject writes the Instagram object to the configFileDir
+func WriteInstagramObject(instagramObject *goinsta.Instagram) error {
+	confFileDir := getConfigFileDir()
 
-	err = createConfFilesIfNotExist(confFile)
-	if err != nil {
-		log.Printf("Error creating the config file, %+v", err)
-		return
-	}
-	viper.Set(authTokenKey, authToken)
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath(confFile)
-	err = viper.WriteConfig()
-	if err != nil {
-		log.Printf("error writing the config file to cache username/password, Error: %+v\n", err)
-		return
-	}
-	return
+	os.MkdirAll(confFileDir, 0777)
+	return instagramObject.Export(confFileDir + "auth")
 }

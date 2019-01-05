@@ -11,4 +11,4 @@ before_script:
 - echo "before script"
 
 script:
-- go run main.go login --username username_passed --password password_passed
+- go run main.go login --help

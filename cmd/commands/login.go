@@ -1,9 +1,9 @@
 package commands
 
 import (
-	"github.com/bharathshetty4/InstaMore/features"
-
 	"github.com/urfave/cli"
+
+	"github.com/bharathshetty4/InstaMore/features"
 )
 
 const (
@@ -16,6 +16,7 @@ var (
 	CommandLogin = cli.Command{
 		Name:        "login",
 		Aliases:     []string{"l"},
+		Usage:       "login to your instagram account by providing username and password",
 		Description: "login to your instagram account by providing username and password",
 		ArgsUsage:   "[GLOBAL ARGUMENTS]",
 

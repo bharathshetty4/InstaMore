@@ -1,25 +1,16 @@
 package config
 
 import (
-	"log"
-
+	"github.com/ahmdrz/goinsta"
 	"github.com/spf13/viper"
+	"log"
 )
 
-//GetAuthToken returns the cached token from the config file
-func GetAuthToken() (token string) {
-	confFile := getConfigFileDir()
-	viper.AddConfigPath(confFile)
-	viper.SetConfigType("yaml")
+//WriteInstagramObject writes the Instagram object to the configFileDir
+func ReadInstagramObject() (*goinsta.Instagram, error) {
+	confFileDir := getConfigFileDir()
 
-	err := viper.ReadInConfig()
-	if err != nil {
-		log.Printf("error reading the auth token from config file, Error: %+v", err)
-		return
-	}
-
-	token = viper.GetString(authTokenKey)
-	return
+	return goinsta.Import(confFileDir + "auth")
 }
 
 //GetUsernamePassword return the cached username and password from the config files

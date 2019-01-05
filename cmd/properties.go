@@ -28,6 +28,7 @@ func SetAppProperties(app *cli.App) {
 func AddCommands(app *cli.App) {
 	app.Commands = []cli.Command{
 		commands.CommandLogin,
+		commands.CommandLike,
 		commands.CommandStartServer,
 	}
 }

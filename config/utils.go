@@ -9,7 +9,6 @@ import (
 const (
 	usernameKey  = "username"
 	passwordKey  = "password"
-	authTokenKey = "auth"
 )
 
 func getConfigFileDir() string {
